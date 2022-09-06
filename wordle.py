@@ -31,7 +31,7 @@ def score(guess, answer):
     return ''.join(score)
 
 def main():
-    rich.print(correct_position('WELCOME') + " " + correct_letter('TO') + " " + incorrect_letter('WORDLE'))
+    rich.print(correct_position('WELCOME') + " " + correct_letter('TO') + " " + incorrect_letter('WORDLE') + "")
 
     guesses = 6
 
@@ -40,14 +40,14 @@ def main():
 
     while guesses != 0:
         guesses -= 1
-        player_input = Prompt.ask('Enter a Word: ').upper()
+        player_input = Prompt.ask('Enter a Word').upper()
         
-        console.print(score(player_input, actual_answer))
+        console.print(score(player_input, actual_answer) + "")
         if player_input == actual_answer:
-            console.print('CONGRATS! You guessed the correct word.')
+            console.print('CONGRATS! You guessed the word.')
             break
     if guesses == 0 and player_input != 0:
-        console.print('WRONG GUESS! The correct word is ' + (actual_answer))
+        console.print('WRONG GUESS! The correct word is ' + correct_position(actual_answer))
 
 if __name__ == '__main__':
     main()
