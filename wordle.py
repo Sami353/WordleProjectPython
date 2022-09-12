@@ -1,6 +1,6 @@
 import random
 import rich
-from words import words
+from fivewords import words
 from rich.prompt import Prompt
 from rich.console import Console
 
